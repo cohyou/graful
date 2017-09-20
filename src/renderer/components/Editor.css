@@ -1,0 +1,7 @@
+.editor {
+    width: 100%;
+    border: solid #ddd 1px;
+    resize: none;
+    font-size: 18px;
+    font-family: 'courier';
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Graful</title>
+  <link rel="stylesheet" href="mode_modules/photon/dist/css/photon.css">
+  <style type="text/css">
+    #app {
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 8px;
+      right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="window">
+    <div id="app" class="window-content"></div>
+  </div>
+
+  <script>require("./dist/renderer/app.js")</script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var text = document.querySelector("#target");
+    var bbox = text.getBBox();
+    var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.x.baseVal.value = bbox.x;
+    rect.y.baseVal.value = bbox.y;
+    rect.width.baseVal.value = bbox.width;
+    rect.height.baseVal.value = bbox.height;
+    rect.style.fill = "yellow";
+    text.parentNode.insertBefore(rect, text);
+  }, false);
+  </script>
+</body>
+</html>
